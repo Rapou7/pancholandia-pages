@@ -1,0 +1,49 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'pancholandia'
+theme = 'hermit-v2'
+
+[params.author]
+  name = "rapou7"
+  about = "about-rapou7"
+
+[params]
+  dateform        = "2 Jan, 2006"
+  dateformShort   = "2 Jan"
+  dateformNum     = "02-01-2006"
+  dateformNumTime = "02-01-2006 15:04 -0700"
+
+  # Metadata mostly used in document's head
+  description = "Continuing Hermit's legacy to be minimal and fast theme"
+  # images = [""]
+  themeColor = "#494f5c"
+
+  #homeSubtitle = "Continuing Hermit's legacy to be minimal and fast theme"
+  footerCopyright = ' <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+  # bgImg = ""
+  # gitUrl = "https://github.com/1bl4z3r/hermit-V2/tree/staging"
+
+  justifyContent = false
+
+  relatedPosts = true
+  code_copy_button = true
+
+  homeSubtitlePrinter = true
+  scrollToTop = true 
+  global_mathjax = false
+  readTime = true
+  readTimeSeparator = "\u2026 \u23F2 Reading Time:"
+  # legacyLayout = false
+  shareSocial = true
+  # googleTagManager = "GTM-XXXXXXXX"
+
+  [[params.socialLinks]]
+    name = "discord"
+    url = "https://discord.gg/jGnp57GhcS"
+
+  [[params.socialLinks]]
+    name = "info"
+    url = "https://info.panxo.eu.org/register"
+
+
+
