@@ -46,4 +46,9 @@ theme = 'hermit-v2'
     url = "https://info.panxo.eu.org/register"
 
 
+[menu]
 
+  [[menu.main]]
+    name = "Servidor de Minecraft"
+    url = "servers/"
+    weight = 10

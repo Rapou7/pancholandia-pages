@@ -1,0 +1,82 @@
+<!-- layouts/shortcodes/minecraft-status.html -->
+
+{{ $apiUrl := "https://api.mcsrvstat.us/3/mc.universocraft.net" }}
+
+<div id="minecraft-widget">
+    <div class="info-container">
+      <div id="status-container">
+        <img id="status-image" src="/img/loading.png" alt="Cargando...">
+        <p id="status-info">Estado del servidor</p>
+      </div>
+      <p id="players-info">Cargando... <img src="/img/players.png" alt="Jugadores"></p>
+    </div>
+    <p id="motd-info">MOTD: Cargando...</p> 
+  </div>
+  
+<style>
+    #minecraft-widget {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    }
+
+    #minecraft-widget img {
+    max-width: 25px; /* Ajusta según tus preferencias */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  #status-container,
+  #players-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .info-container {
+    display: flex;
+    width: 100%;
+  }
+
+  #status-image {
+    margin-right: 8px !important; /* Ajusta según sea necesario */
+  }
+
+  #status-info,
+  #players-info img {
+    margin-right: 8px; /* Ajusta según sea necesario */
+  }
+
+</style>
+
+  <script>
+    function obtenerEstadoServidor() {
+      const apiUrl = '{{ $apiUrl }}';
+  
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          const playersOnline = data.players.online;
+          const playersMax = data.players.max;
+          const motd = data.motd.clean.join('\n');
+          const serverStatus = data.online;
+  
+          // Selecciona la imagen basada en el estado del servidor
+          const statusImage = document.getElementById('status-image');
+          statusImage.src = serverStatus ? '/img/online.png' : '/img/offline.png';
+          statusImage.alt = serverStatus ? 'En línea' : 'Fuera de línea';
+  
+          // Muestra la cantidad de jugadores con la imagen representativa
+          document.getElementById('players-info').innerHTML = `<img src="/img/players.png" alt="Jugadores"> ${playersOnline}/${playersMax}`;
+          document.getElementById('motd-info').innerHTML = `MOTD: ${motd}`;
+        })
+        .catch(error => console.error('Error al obtener el estado del servidor', error));
+    }
+
+
+  obtenerEstadoServidor();
+  setInterval(obtenerEstadoServidor, 300000);
+</script>
