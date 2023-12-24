@@ -5,10 +5,10 @@
 <div id="minecraft-widget">
     <div class="info-container">
       <div id="status-container">
-        <img id="status-image" src="./main/img/loading.png" alt="Cargando...">
-        <p id="status-info">Estado del servidor</p>
+        <img id="status-image" src="https://github.com/Rapou7/pancholandia-pages/blob/main/static/img/loading.png?raw=true" alt="Cargando...">
+        <p id="status-info">Estado</p>
       </div>
-      <p id="players-info">Cargando... <img src="./main/img/players.png" alt="Jugadores"></p>
+      <p id="players-info">Cargando... <img src="https://github.com/Rapou7/pancholandia-pages/blob/main/static/img/players.png?raw=true" alt="Jugadores"></p>
     </div>
     <p id="motd-info">MOTD: Cargando...</p> 
   </div>
@@ -34,6 +34,7 @@
   #players-info {
     display: flex;
     align-items: center;
+    margin-left: 8px; /* Ajusta según sea necesario */
   }
 
   .info-container {
@@ -42,12 +43,12 @@
   }
 
   #status-image {
-    margin-right: 8px !important; /* Ajusta según sea necesario */
+    margin-right: 8px; /* Ajusta según sea necesario */
   }
 
   #status-info,
   #players-info img {
-    margin-right: 8px; /* Ajusta según sea necesario */
+    margin-left: 8px; /* Ajusta según sea necesario */
   }
 
 </style>
@@ -66,11 +67,11 @@
   
           // Selecciona la imagen basada en el estado del servidor
           const statusImage = document.getElementById('status-image');
-          statusImage.src = serverStatus ? './main/img/online.png' : './main/img/offline.png';
+          statusImage.src = serverStatus ? 'https://github.com/Rapou7/pancholandia-pages/blob/main/static/img/online.png?raw=true' : 'https://github.com/Rapou7/pancholandia-pages/blob/main/static/img/offline.png?raw=true';
           statusImage.alt = serverStatus ? 'En línea' : 'Fuera de línea';
   
           // Muestra la cantidad de jugadores con la imagen representativa
-          document.getElementById('players-info').innerHTML = `<img src="./main/img/players.png" alt="Jugadores"> ${playersOnline}/${playersMax}`;
+          document.getElementById('players-info').innerHTML = `${playersOnline}/${playersMax} <img src="https://github.com/Rapou7/pancholandia-pages/blob/main/static/img/players.png?raw=true" alt="Jugadores">`;
           document.getElementById('motd-info').innerHTML = `MOTD: ${motd}`;
         })
         .catch(error => console.error('Error al obtener el estado del servidor', error));
