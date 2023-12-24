@@ -5,10 +5,10 @@
 <div id="minecraft-widget">
     <div class="info-container">
       <div id="status-container">
-        <img id="status-image" src="/img/loading.png" alt="Cargando...">
+        <img id="status-image" src="./main/img/loading.png" alt="Cargando...">
         <p id="status-info">Estado del servidor</p>
       </div>
-      <p id="players-info">Cargando... <img src="/img/players.png" alt="Jugadores"></p>
+      <p id="players-info">Cargando... <img src="./main/img/players.png" alt="Jugadores"></p>
     </div>
     <p id="motd-info">MOTD: Cargando...</p> 
   </div>
@@ -66,11 +66,11 @@
   
           // Selecciona la imagen basada en el estado del servidor
           const statusImage = document.getElementById('status-image');
-          statusImage.src = serverStatus ? '/img/online.png' : '/img/offline.png';
+          statusImage.src = serverStatus ? './main/img/online.png' : './main/img/offline.png';
           statusImage.alt = serverStatus ? 'En línea' : 'Fuera de línea';
   
           // Muestra la cantidad de jugadores con la imagen representativa
-          document.getElementById('players-info').innerHTML = `<img src="/img/players.png" alt="Jugadores"> ${playersOnline}/${playersMax}`;
+          document.getElementById('players-info').innerHTML = `<img src="./main/img/players.png" alt="Jugadores"> ${playersOnline}/${playersMax}`;
           document.getElementById('motd-info').innerHTML = `MOTD: ${motd}`;
         })
         .catch(error => console.error('Error al obtener el estado del servidor', error));
