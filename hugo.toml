@@ -1,5 +1,5 @@
 baseURL = 'https://panxo.eu.org/'
-languageCode = 'en-us'
+languageCode = 'es-es'
 title = 'pancholandia'
 theme = 'hermit-v2'
 
@@ -14,9 +14,9 @@ theme = 'hermit-v2'
   dateformNumTime = "02-01-2006 15:04 -0700"
 
   # Metadata mostly used in document's head
-  description = "Continuing Hermit's legacy to be minimal and fast theme"
+  description = "pancholandia"
   # images = [""]
-  themeColor = "#494f5c"
+  themeColor = "#191b1c"
 
   #homeSubtitle = "Continuing Hermit's legacy to be minimal and fast theme"
   footerCopyright = ' <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
